@@ -4,6 +4,10 @@
 ai2-kit workflow cll-mlp-training
 ```
 
+> [!WARNING]
+> **Deprecated:** 基于配置的 CLL 工作流已进入弃用状态，后续仅做向后兼容维护。
+> 对于新项目和后续更新，请优先使用仓库中的 example-driven workflows 方案。
+
 ## 简介
 
 CLL 工作流通过对 DPGEN 的流程和实现进行改进，以满足更复杂的势函数训练需求以及可持续的代码集成。CLL 工作流采用闭环学习的模式，通过迭代的方式自动训练 MLP 势函数。在每一次迭代中，工作流使用由第一性原理方法生成的标记结构来训练多个 MLP 模型。然后，这些模型被用来探索新的结构作为下一次迭代的训练数据。迭代会一直持续，直到 MLP 模型的质量满足预定的标准。每次迭代的配置可根据训练需要进行更新，以进一步提高训练效率。
@@ -55,7 +59,7 @@ ai2-kit tool ase read h2o_64.aimd.xyz --index ':900:5' - set_cell "[12.42,12.42,
 ai2-kit tool ase read h2o_64.aimd.xyz --index '900::5' - set_cell "[12.42,12.42,12.42,90,90,90]" - write data/validation.xyz
 
 # 抽取用于初始结构搜索的数据，间隔 100 帧抽取
-ai2-kit tool ase read h2o_64.aimd.xyz --index '::100' - set_cell "[12.42,12.42,12.42,90,90,90]" - write_each_frame "./data/explore/POSCAR-{i:04d}" --format vasp
+ai2-kit tool ase read h2o_64.aimd.xyz --index '::100' - set_cell "[12.42,12.42,12.42,90,90,90]" - write_frames "./data/explore/POSCAR-{i:04d}" --format vasp
  ```
 
 

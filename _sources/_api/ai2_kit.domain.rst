@@ -7,12 +7,14 @@ Submodules
 .. toctree::
    :maxdepth: 4
 
+   ai2_kit.domain.anyware
    ai2_kit.domain.asap
    ai2_kit.domain.constant
    ai2_kit.domain.cp2k
    ai2_kit.domain.data
    ai2_kit.domain.deepmd
    ai2_kit.domain.dpff
+   ai2_kit.domain.dplr
    ai2_kit.domain.iface
    ai2_kit.domain.lammps
    ai2_kit.domain.lasp
